@@ -1,0 +1,15 @@
+/* #area1 {
+    border: 5px solid red;
+}
+
+#area2 {
+    border: 5px solid red;
+}
+
+#area3 {
+    border: 5px solid red;
+} */
+
+.area {
+    border: 5px solid black;
+}

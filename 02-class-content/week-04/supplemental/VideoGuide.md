@@ -1,5 +1,9 @@
 ## Unit 4 (Intro to jQuery) - Video Guide
+### Previous Week's Homework
 
+#### Homework #3 - Let's Build Word Guess
+
+Live coded walkthrough (from scratch!) of the Word Guess game using HTML, Bootstrap CSS, and JavaScript. [Watch the Video!](https://youtu.be/cgdmOR15cn4)
 
 ### Key Activities This Week
 

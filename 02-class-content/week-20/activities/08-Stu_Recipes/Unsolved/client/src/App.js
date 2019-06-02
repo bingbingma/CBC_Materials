@@ -13,6 +13,17 @@ class App extends Component {
     recipeSearch: ""
   };
 
+  //when the App starts, get specific recipe, setState and console.log result 'Spaghetti')
+  componentDidMount(){
+    API.getRecipes('Spaghetti')
+      .then(res => {
+        console.log(res.data);
+        this.setState({recipes: res.data});
+      })
+      .catch(err => console.log(err))
+  }
+
+
   handleInputChange = event => {
     // Destructure the name and value properties off of event.target
     // Update the appropriate state
@@ -68,7 +79,21 @@ class App extends Component {
           </Row>
           <Row>
             <Col size="xs-12">
-              <h1>Render Recipes Here</h1>
+              <h1>
+                <RecipeList>
+                  {this.state.recipes.map(recipe => {
+                    return (
+                      <RecipeListItem
+                        key={recipe.title}
+                        title={recipe.title}
+                        href={recipe.href}
+                        ingredients={recipe.ingredients}
+                        thumbnail={recipe.thumbnail}
+                        />
+                    )
+                  })}
+                </RecipeList>
+              </h1>
             </Col>
           </Row>
         </Container>

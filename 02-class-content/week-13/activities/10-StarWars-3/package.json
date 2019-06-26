@@ -2,7 +2,7 @@
   "name": "starwars-express",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "server3.js",
   "dependencies": {
     "express": "^4.16.3"
   },

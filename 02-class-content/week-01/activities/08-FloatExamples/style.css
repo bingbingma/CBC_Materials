@@ -1,27 +1,43 @@
-/**
- * Float Stylesheet
- **/
-
-
-/* content1 starts the float and will rest at the top-left corner of its enclosing element */
-
-.content1 {
-  float: left;
+*, *::after, *::before {
+  box-sizing: border-box;
 }
 
-
-/* content2 continues the left float; it will sit at the right side of content1 */
-
-.content2 {
-  float: left;
+.container {
+  margin: 0 auto;
+  margin-top: 50px;
+  width: 1000px;
+  color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1.25em;
 }
 
-
-/* clearfix is applied to the parent container to 'fix' the flow of the page */
-
-.clearfix::after {
-  content: "";
-  display: block;
-  clear: both;
+header {
+  background-color: #1D88E5;
+  height: 100px;
+  padding: 10px;
+  border: 1px solid white;
 }
 
+aside {
+  background-color: #1D88E5;
+  width: 300px;
+  height: 400px;
+  padding: 10px;
+  border: 1px solid white;
+}
+
+main {
+  background-color: #1D88E5;
+  width: 700px;
+  height: 400px;
+  padding: 10px;
+  border: 1px solid white;
+}
+
+footer {
+  background-color: #1D88E5;
+  width: 1000px;
+  height: 100px;
+  padding: 10px;
+  border: 1px solid white;
+}

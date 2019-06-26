@@ -36,7 +36,7 @@
     var id = $(this).data("planid");
 
     // Send the DELETE request.
-    $.ajax("/todos/" + id, {
+    $.ajax("/api/plans/" + id, {
       type: "DELETE"
     }).then(
       function() {
@@ -57,7 +57,7 @@
     };
 
     // Send the POST request.
-    $.ajax("/todos", {
+    $.ajax("/api/plans", {
       type: "POST",
       data: newPlan
     }).then(
@@ -81,7 +81,7 @@
     };
 
     // Send the PUT request.
-    $.ajax("/todos/" + id, {
+    $.ajax("/api/plans/" + id, {
       type: "PUT",
       data: updatedPlan
     }).then(

@@ -3,7 +3,7 @@ var express = require("express");
 
 // Set the port of our application
 // process.env.PORT lets the port be set by Heroku
-var PORT = process.env.PORT || 8081;
+var PORT = process.env.PORT || 8080;
 
 // Create express app instance.
 var app = express();
@@ -39,8 +39,7 @@ app.get("/:operation/:firstNum/:secondNum", function(req, res) {
     result = firstNum / secondNum;
     break;
   default:
-    result =
-        "Sorry! The only valid operations are add, subtract, multiply, and divide.";
+    result = "Sorry! The only valid operations are add, subtract, multiply, and divide.";
   }
 
   // We return the result back to the user in the form of a string

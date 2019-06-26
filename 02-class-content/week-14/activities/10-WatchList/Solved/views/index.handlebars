@@ -30,7 +30,7 @@
     var id = $(this).data("movieid");
 
     // Send the DELETE request.
-    $.ajax("/movies/" + id, {
+    $.ajax("/api/movies/" + id, {
       type: "DELETE"
     }).then(
       function() {
@@ -50,7 +50,7 @@
     };
 
     // Send the POST request.
-    $.ajax("/movies", {
+    $.ajax("/api/movies", {
       type: "POST",
       data: newMovie
     }).then(
@@ -73,7 +73,7 @@
     };
 
     // Send the PUT request.
-    $.ajax("/movies/" + id, {
+    $.ajax("/api/movies/" + id, {
       type: "PUT",
       data: updatedMovie
     }).then(

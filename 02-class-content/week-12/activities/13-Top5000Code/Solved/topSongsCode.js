@@ -5,13 +5,13 @@ var connection = mysql.createConnection({
   host: "localhost",
 
   // Your port; if not 3306
-  port: 8889,
+  port: 3306,
 
   // Your username
   user: "root",
 
   // Your password
-  password: "root",
+  password: "",
   database: "top_songsDB"
 });
 
@@ -67,22 +67,21 @@ function artistSearch() {
       message: "What artist would you like to search for?"
     })
     .then(function(answer) {
-      var query = 'SELECT COUNT(*) FROM top5000 WHERE ?';
+      var query = "SELECT position, song, year FROM top5000 WHERE ?";
       connection.query(query, { artist: answer.artist }, function(err, res) {
-        // for (var i = 0; i < res.length; i++) {
-        //   console.log("Position: " + res[i].position);
-        //   console.log("Song: " + res[i].song)
-        //   console.log("Year: " + res[i].year);
-        // }
-        console.log(res);
+        if (err) throw err;
+        for (var i = 0; i < res.length; i++) {
+          console.log("Position: " + res[i].position + " || Song: " + res[i].song + " || Year: " + res[i].year);
+        }
         runSearch();
       });
     });
 }
 
 function multiSearch() {
-  var query = 'SELECT artist FROM top5000 GROUP BY artist HAVING count(*) > 1'
+  var query = "SELECT artist FROM top5000 GROUP BY artist HAVING count(*) > 1";
   connection.query(query, function(err, res) {
+    if (err) throw err;
     for (var i = 0; i < res.length; i++) {
       console.log(res[i].artist);
     }
@@ -96,7 +95,7 @@ function rangeSearch() {
       {
         name: "start",
         type: "input",
-        message: "Enter starting year: ",
+        message: "Enter starting position: ",
         validate: function(value) {
           if (isNaN(value) === false) {
             return true;
@@ -107,7 +106,7 @@ function rangeSearch() {
       {
         name: "end",
         type: "input",
-        message: "Enter ending year: ",
+        message: "Enter ending position: ",
         validate: function(value) {
           if (isNaN(value) === false) {
             return true;
@@ -117,11 +116,9 @@ function rangeSearch() {
       }
     ])
     .then(function(answer) {
-      var query = 'SELECT position, song, artist, year FROM top5000 WHERE year BETWEEN ? AND ?'
-      //' SELECT position, song, artist, year FROM top5000 WHERE year BETWEEN 2009 AND 2011'
-      // [obj, obj]
-      // [2009, 2011]
+      var query = "SELECT position,song,artist,year FROM top5000 WHERE position BETWEEN ? AND ?";
       connection.query(query, [answer.start, answer.end], function(err, res) {
+        if (err) throw err;
         for (var i = 0; i < res.length; i++) {
           console.log(
             "Position: " +
@@ -148,8 +145,8 @@ function songSearch() {
     })
     .then(function(answer) {
       console.log(answer.song);
-
-      var q = connection.query("SELECT * FROM top5000 WHERE ?", { year: answer.song }, function(err, res) {
+      connection.query("SELECT * FROM top5000 WHERE ?", { song: answer.song }, function(err, res) {
+        if (err) throw err;
         console.log(
           "Position: " +
             res[0].position +
@@ -160,7 +157,6 @@ function songSearch() {
             " || Year: " +
             res[0].year
         );
-        console.log(q.sql);
         runSearch();
       });
     });

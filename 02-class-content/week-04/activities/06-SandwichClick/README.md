@@ -8,7 +8,7 @@
 
   1. An alert message to popup saying something snarky about the sandwich type.
 
-  2. A second alert message that displays to the user the number of that specific sandwich they’ve eaten.
+  2. A second alert message that displays to the user how many of that specific sandwich they've eaten.
 
   3. **HINT:** You will need counter variables.
 

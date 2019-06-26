@@ -61,13 +61,13 @@ app.get("/api/characters/:character", function(req, res) {
 
 // Create New Characters - takes in JSON input
 app.post("/api/characters", function(req, res) {
-  var newcharacter = req.body;
+  var newCharacter = req.body;
 
-  console.log(newcharacter);
+  console.log(newCharacter);
 
-  characters.push(newcharacter);
+  characters.push(newCharacter);
 
-  res.json(newcharacter);
+  res.json(newCharacter);
 });
 
 app.listen(PORT, function() {

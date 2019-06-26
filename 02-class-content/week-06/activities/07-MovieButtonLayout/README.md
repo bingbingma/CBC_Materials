@@ -12,6 +12,6 @@
 
   * Dynamically generate the initial buttons using jQuery
 
-  * Allow users to create new buttons upon entering text in the textbox and clicking `Add a Movie Bro`.
+  * Allow users to create new buttons upon entering text in the textbox and clicking `Add a Movie Yo`.
 
   * If you finish early, begin reading about [HTML5 `data-*` attributes](https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes) and how (and why) you would add them to dynamically generated elements with the [jQuery `.attr()` method](http://api.jquery.com/attr/).

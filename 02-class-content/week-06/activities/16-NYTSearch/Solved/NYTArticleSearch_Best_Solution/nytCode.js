@@ -8,7 +8,7 @@ function buildQueryURL() {
 
   // Begin building an object to contain our API call's query parameters
   // Set the API key
-  var queryParams = { "api-key": "b9f91d369ff59547cd47b931d8cbc56b:0:74623931" };
+  var queryParams = { "api-key": "R1a31F4tBjCUaM2ho8GtIFsrSdtXt30M" };
 
   // Grab text the user typed into the search input, add to the queryParams object
   queryParams.q = $("#search-term")

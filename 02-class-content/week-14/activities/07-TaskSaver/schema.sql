@@ -10,16 +10,19 @@ To run this file, we do the following in our Terminal:
 
 */
 
+-- Drops the task_saver_db if it already exists --
+DROP DATABASE IF EXISTS task_saver_db;
+
 -- Create the database task_saver_db and specified it for use.
 CREATE DATABASE task_saver_db;
+
 USE task_saver_db;
 
 -- Create the table tasks.
-CREATE TABLE tasks
-(
-id int NOT NULL AUTO_INCREMENT,
-task varchar(255) NOT NULL,
-PRIMARY KEY (id)
+CREATE TABLE tasks (
+  id int NOT NULL AUTO_INCREMENT,
+  task varchar(255) NOT NULL,
+  PRIMARY KEY (id)
 );
 
 -- Insert a set of records.

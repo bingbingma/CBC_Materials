@@ -1,15 +1,9 @@
-### File
+# Scope Activity #1
 
-[`lexical-scope-1-unsolved`](Unsolved/lexical-scope-1-unsolved.html)
+## Instructions
 
-### Instructions
+* Open `Unsolved/index.html` in a browser and then open the console.
 
-* Take a few moments dissecting what I just said.
+* With your neighbor, compare the results in the console to the JavaScript in `index.html` and answer the questions in the comments.
 
-* Look at the file above, and explain to the person next to you what is meant by:
-
-  * The terms parent function and child function
-
-  * The concept that child functions can access parent variables, but not vice versa.
-
-* Be prepared to share!
+* **HINT**: Read the [MDN docs on closures](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures)

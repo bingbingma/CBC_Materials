@@ -52,7 +52,7 @@
 
     // The search OMDB function takes a movie, searches the omdb api for it, and then passes the data to createRow
     var searchOMDB = function(movie) {
-      var queryURL = "https://www.omdbapi.com/?t=" + movie + "&y=&plot=short&apikey=trilogy";
+      var queryURL = "https://www.omdbapi.com/?t=" + movie + "&apikey=trilogy";
       $.ajax({
         url: queryURL,
         method: "GET"

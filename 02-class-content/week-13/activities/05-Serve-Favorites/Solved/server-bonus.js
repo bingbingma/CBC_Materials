@@ -28,6 +28,7 @@ function handleRequest(req, res) {
 // function to take a filepath and respond with html
 function renderHTML(filePath, res) {
   return fs.readFile(__dirname + filePath, function(err, data) {
+    if (err) throw err;
     res.writeHead(200, { "Content-Type": "text/html" });
     res.end(data);
   });

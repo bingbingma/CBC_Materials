@@ -11,38 +11,38 @@ var outputNum;
 
 // Determines the operand selected...
 // Based on the operand we run the appropriate math on the two numbers
-if (operand === "add") {
+switch (operand) {
+case "add":
   outputNum = parseFloat(num1) + parseFloat(num2);
-}
+  break;
 
-else if (operand === "subtract") {
+case "subtract":
   outputNum = parseFloat(num1) - parseFloat(num2);
-}
+  break;
 
-else if (operand === "multiply") {
+case "multiply":
   outputNum = parseFloat(num1) * parseFloat(num2);
-}
+  break;
 
-else if (operand === "divide") {
+case "divide":
   outputNum = parseFloat(num1) / parseFloat(num2);
-}
+  break;
 
-else if (operand === "remainder") {
+case "remainder":
   outputNum = parseFloat(num1) % parseFloat(num2);
-}
+  break;
 
-else if (operand === "exp") {
+case "exp":
   outputNum = Math.pow(num1, num2);
-}
+  break;
 
-else if (operand === "algebra") {
+case "algebra":
   outputNum = parseAlgebra(num1);
-}
+  break;
 
-else {
+default:
   outputNum = "Not a recognized command";
 }
-
 
 // Prints the outputNumber
 console.log(outputNum);

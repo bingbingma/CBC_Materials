@@ -20,18 +20,18 @@ function handleRequest(req, res) {
   switch (path) {
 
   case "/":
-    return displayRoot(path, req, res);
+    return displayRoot(res);
 
   case "/portfolio":
-    return displayPortfolio(path, req, res);
+    return displayPortfolio(res);
 
   default:
-    return display404(path, req, res);
+    return display404(path, res);
   }
 }
 
 // When someone visits the "http://localhost:8080/" path, this function is run.
-function displayRoot(url, req, res) {
+function displayRoot(res) {
   var myHTML = "<html>" +
     "<body><h1>Home Page</h1>" +
     "<a href='/portfolio'>Portfolio</a>" +
@@ -45,7 +45,7 @@ function displayRoot(url, req, res) {
 }
 
 // When someone visits the "http://localhost:8080/portfolio" path, this function is run.
-function displayPortfolio(url, req, res) {
+function displayPortfolio(res) {
   var myHTML = "<html>" +
     "<body><h1>My Portfolio</h1>" +
     "<a href='/'>Go Home</a>" +
@@ -59,7 +59,7 @@ function displayPortfolio(url, req, res) {
 }
 
 // When someone visits any path that is not specifically defined, this function is run.
-function display404(url, req, res) {
+function display404(url, res) {
   var myHTML = "<html>" +
     "<body><h1>404 Not Found </h1>" +
     "<p>The page you were looking for: " + url + " can not be found</p>" +

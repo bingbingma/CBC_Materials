@@ -6,7 +6,7 @@ These are the basic commands for navigating directories in a Terminal or Git Bas
 
 #### Change Directory
 
-`cd`
+`cd [path/to/desired/directory]`
 
 #### Change to Home Directory
 

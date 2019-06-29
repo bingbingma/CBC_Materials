@@ -30,6 +30,7 @@ function createProduct() {
       quantity: 50
     },
     function(err, res) {
+      if (err) throw err;
       console.log(res.affectedRows + " product inserted!\n");
       // Call updateProduct AFTER the INSERT completes
       updateProduct();
@@ -53,6 +54,7 @@ function updateProduct() {
       }
     ],
     function(err, res) {
+      if (err) throw err;
       console.log(res.affectedRows + " products updated!\n");
       // Call deleteProduct AFTER the UPDATE completes
       deleteProduct();
@@ -71,6 +73,7 @@ function deleteProduct() {
       flavor: "strawberry"
     },
     function(err, res) {
+      if (err) throw err;
       console.log(res.affectedRows + " products deleted!\n");
       // Call readProducts AFTER the DELETE completes
       readProducts();

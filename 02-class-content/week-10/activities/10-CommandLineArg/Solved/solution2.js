@@ -2,4 +2,4 @@
 console.log(process.argv[2] === process.argv[3]);
 
 // Bonus
-console.log((process.argv[2] % 7) + (process.argv[3] % 7) === 0);
+console.log(process.argv[2] % 7 === 0 && process.argv[3] % 7 === 0);

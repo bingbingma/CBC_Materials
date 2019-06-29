@@ -29,7 +29,9 @@ connection.connect(function(err) {
 
 // Routes
 app.get("/cast", function(req, res) {
-  connection.query("SELECT * FROM actors order by id", function(err, result) {
+  connection.query("SELECT * FROM actors ORDER BY id", function(err, result) {
+    if (err) throw err;
+    
     var html = "<h1>Actors Ordered BY ID</h1>";
 
     html += "<ul>";
@@ -48,7 +50,9 @@ app.get("/cast", function(req, res) {
 });
 
 app.get("/coolness-chart", function(req, res) {
-  connection.query("SELECT * FROM actors order by coolness_points DESC", function(err, result) {
+  connection.query("SELECT * FROM actors ORDER BY coolness_points DESC", function(err, result) {
+    if (err) throw err;
+
     var html = "<h1>Actors by Coolness</h1>";
 
     html += "<ul>";
@@ -67,7 +71,9 @@ app.get("/coolness-chart", function(req, res) {
 });
 
 app.get("/attitude-chart/:att", function(req, res) {
-  connection.query("SELECT * FROM actors where attitude = ?", [req.params.att], function(err, result) {
+  connection.query("SELECT * FROM actors WHERE attitude = ?", [req.params.att], function(err, result) {
+    if (err) throw err;
+
     var html = "<h1>Actors With an Attitude of " + req.params.att + "</h1>";
 
     html += "<ul>";

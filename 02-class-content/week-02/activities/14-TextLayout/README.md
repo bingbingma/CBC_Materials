@@ -4,7 +4,7 @@
 
 ### Instruction
 
-* Using Twitter bootstrap, create a layout that looks like:
+* Using Bootstrap, create a layout that looks like:
 
   ![text-layout activity design](text-layout.png)
 

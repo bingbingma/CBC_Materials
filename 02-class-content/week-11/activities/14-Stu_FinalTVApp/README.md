@@ -20,6 +20,10 @@ In this activity we will update the TV constructor function to be able to search
 
 * Test that your code works properly by running the `cli.js` file with arguments. e.g. `node cli actor Jennifer Aniston`.
 
+### Bonus
+
+* Once you've finished the basic activity, update the `cli.js` file to use the `inquirer` npm package to prompt the user for their search and term rather than `process.argv`.
+
 ### Hints
 
 * Implementing the `findActor` method should be very similar to the `findShow` method, refer to this if stuck.

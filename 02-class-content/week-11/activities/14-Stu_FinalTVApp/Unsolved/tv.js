@@ -26,7 +26,7 @@ var TV = function() {
       // Append showData and the divider to log.txt, print showData to the console
       fs.appendFile("log.txt", showData + divider, function(err) {
         if (err) throw err;
-       
+        console.log(showData);
       });
     });
   };

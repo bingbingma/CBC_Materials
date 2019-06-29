@@ -1,4 +1,6 @@
 var express = require("express");
+var exphbs = require("express-handlebars");
+var mysql = require("mysql");
 
 var app = express();
 
@@ -10,12 +12,8 @@ var PORT = process.env.PORT || 8080;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-var exphbs = require("express-handlebars");
-
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
-
-var mysql = require("mysql");
 
 var connection = mysql.createConnection({
   host: "localhost",
@@ -46,7 +44,7 @@ app.get("/", function(req, res) {
 });
 
 // Create a new movie
-app.post("/movies", function(req, res) {
+app.post("/api/movies", function(req, res) {
   connection.query("INSERT INTO movies (movie) VALUES (?)", [req.body.movie], function(err, result) {
     if (err) {
       return res.status(500).end();
@@ -59,7 +57,7 @@ app.post("/movies", function(req, res) {
 });
 
 // Retrieve all movies
-app.get("/movies", function(req, res) {
+app.get("/api/movies", function(req, res) {
   connection.query("SELECT * FROM movies;", function(err, data) {
     if (err) {
       return res.status(500).end();
@@ -70,7 +68,7 @@ app.get("/movies", function(req, res) {
 });
 
 // Update a movie
-app.put("/movies/:id", function(req, res) {
+app.put("/api/movies/:id", function(req, res) {
   connection.query("UPDATE movies SET movie = ? WHERE id = ?", [req.body.movie, req.params.id], function(err, result) {
     if (err) {
       // If an error occurred, send a generic server failure
@@ -86,7 +84,7 @@ app.put("/movies/:id", function(req, res) {
 });
 
 // Delete a movie
-app.delete("/movies/:id", function(req, res) {
+app.delete("/api/movies/:id", function(req, res) {
   connection.query("DELETE FROM movies WHERE id = ?", [req.params.id], function(err, result) {
     if (err) {
       // If an error occurred, send a generic server failure

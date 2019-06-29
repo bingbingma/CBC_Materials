@@ -37,8 +37,7 @@ app.get("", function(req, res) {
     break;
   default:
     // Handle anything that isn't specified
-    result =
-        "Sorry! The only valid operations are add, subtract, multiply, and divide.";
+    result = "Sorry! The only valid operations are add, subtract, multiply, and divide.";
   }
 
   // We return the result back to the user in the form of a string

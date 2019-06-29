@@ -6,7 +6,7 @@ In this activity, we'll get some experience working with Bootstrap components.
 
 * Working with someone closest to you:
 
-  * Navigate to the Twitter Bootstrap website.
+  * Navigate to the Bootstrap website.
 
   * Then copy the link to the Bootstrap CSS file into one of your old HTML files.
 
